@@ -15,9 +15,12 @@ ERP_System/
 
 **Render.com Settings:**
 - **Root Directory:** `.` (leave empty)
-- **Build Command:** `npm install && npm run build && cd server && npm install`
+- **Build Command:** `npm install && GENERATE_SOURCEMAP=false CI=false npm run build && cd server && npm install`
 - **Start Command:** `cd server && npm start`
 - **Node Version:** 18.x or higher
+
+**Alternative Build Command (if above fails):**
+`npm ci && npm run render-build`
 
 **Environment Variables:**
 - `MONGODB_URI`: mongodb+srv://ammbhone_db_user:aFP5dGEyrcpg31nE@cluster0.8cat7vu.mongodb.net/erp_system
