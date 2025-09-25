@@ -15,12 +15,14 @@ ERP_System/
 
 **Render.com Settings:**
 - **Root Directory:** `.` (leave empty)
-- **Build Command:** `npm install && GENERATE_SOURCEMAP=false CI=false npm run build && cd server && npm install`
+- **Build Command:** `npm ci && CI=false GENERATE_SOURCEMAP=false npm run build && cd server && npm ci`
 - **Start Command:** `cd server && npm start`
 - **Node Version:** 18.x or higher
 
-**Alternative Build Command (if above fails):**
-`npm ci && npm run render-build`
+**Alternative Build Commands (try in order if above fails):**
+1. `npm install --frozen-lockfile && CI=false npm run build && cd server && npm install`
+2. `npm ci && npm run render-build`
+3. `chmod +x render-deploy.sh && ./render-deploy.sh`
 
 **Environment Variables:**
 - `MONGODB_URI`: mongodb+srv://ammbhone_db_user:aFP5dGEyrcpg31nE@cluster0.8cat7vu.mongodb.net/erp_system
